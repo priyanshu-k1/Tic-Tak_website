@@ -1,38 +1,119 @@
 *{
     margin:0px;
-    border:0px;
     padding:0px;
+    box-sizing: border-box;
 }
-body{
-    background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
-    height: 100vh;
+
+.container{
+    padding: 10px;
+    gap:20px;
+    height:100vh;
     width:100vw;
+    background: rgb(255,154,139);
+    background: linear-gradient(45deg, rgba(255,154,139,1) 0%, rgba(255,106,136,1) 50%, rgba(255,153,172,1) 100%);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    overflow: hidden;
 }
-.main{
-    background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
-    height: 100vh;
-    width:100vw;
+.scoreboard{
+    margin-left:90px;
+    gap:20px;
+    display: flex;
+    flex-direction:column;
+    padding:10px;
+    height:92vh;
+    width:30vw;
+    background-color: blue;
+
+}
+.card{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width:100%;
+    background-color: blueviolet;
+    height:50%;
+}
+.playerarea{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border:2px solid black;
+    width:50%;
+    height:80%;
+    font-size: 36px;
+    background-color: #dcee79;
+}
+.playerScard{
+    margin-top:7px;
+    height:80%;
+    width:100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    border:2px solid black;
+    overflow: hidden;
+}
+.indicator{
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height:20%;
+    background-color: aqua;
+    
+}
+.controlpanel{
+    display: flex;
+    flex-direction:column;
+    gap:10px;
+    width:100%;
+    height:40%;
+    background-color: brown;
+    padding:10px;
+
+}
+.userInput{
+    background-color: #dcee79;
+    padding:5px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap:10px;
+   height:35%;
+}
+.PlayersNameEntry{
+    width: 45%;
+    height:5vh;
+    border-radius:15px;
+    padding:5px;
+    text-align: center;
+}
+.submitButton{
+    width:150px;
+    height:30px;
+    background-color: #37da37;
 }
 .board{
-    display: flex; 
-    flex-wrap: wrap;
+    padding: 10px;
+    margin-left:40px;
+    gap:2px;
+    aspect-ratio: 1 / 1;
+    width:43vw;
     background-color: #000000;
-    height:70vh;
-    width: 90vw;
+    display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
 }
-.cell{
+.tiles{
     display: flex;
     align-items:center;
     justify-content:center;
     font-size:30px;
-    margin:5px;
-    background-color:#ffffff;
-    width: 27.4vw;
-    height:22vh;
-
+    width: 13.8vw;
+    height: 33.33%;
+    background-color: #ffffff;
 }

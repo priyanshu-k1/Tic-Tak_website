@@ -3,27 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic-Tak-Toe Game</title>
+    <link rel="shortcut icon" href="/assets/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <title>Tic Tac</title>
 </head>
 <body>
-    <div class="main">
-        <h1>TIC TAC TOE</h1>
-`       <div class="board">
-            <div class="cell" onclick="move(this)" id="1"></div>
-            <div class="cell" onclick="move(this)" id="2"></div>
-            <div class="cell" onclick="move(this)" id="3"></div>
-            <div class="cell" onclick="move(this)" id="4"></div>
-            <div class="cell" onclick="move(this)" id="5"></div>
-            <div class="cell" onclick="move(this)" id="6"></div>
-            <div class="cell" onclick="move(this)" id="7"></div>
-            <div class="cell" onclick="move(this)" id="8"></div>
-            <div class="cell" onclick="move(this)" id="9"></div>
-         </div>
-         <div class="PlayerDetails">
-            <H1>A.N.S.H.U VS YOU</H1>
-         </div>
+    <div class="container">
+        <div class="scoreboard">
+            <h1 align="center">Player's scoreboard</h1>
+            <div class="card">
+                <div class="playerarea">
+                    <label for="player1" class="playername">Player1</label>
+                    <div class="playerScard">
+                        <p class="player1Score">
+                            N/A
+                        </p>
+                    </div>
+                </div>
+                <div class="playerarea">
+                    <label for="player2" class="playername">player2</label>
+                    <div class="playerScard">
+                        <p class="player1Score">
+                            N/A
+                        </p>
+                    </div>
+                </div>
+                <div class="indicator">
+                    <h3 class="nextturn">
+                        Player{?} will make the next move
+                    </h3>
+                </div>
+            </div>
+            <div class="controlpanel">
+                <div class="userInput">
+                    <input type="Player1" class="PlayersNameEntry" placeholder="Player-1 name here.." >
+                    <input type="Player2" class="PlayersNameEntry" placeholder="Player-2 name here..">
+                    <button class="submitButton">Submit</button>
+                </div>
+                <button>Against A.I</button>
+                <button>Reset</button>
+                <button>Mute</button>
+                <p class="chatwindow">chat's from ai here</p>
+            </div>
+        </div>
+        <div class="board">
+            <div class="tiles" onclick="move(this)" id="1" ></div>
+            <div class="tiles" onclick="move(this)" id="2"></div>
+            <div class="tiles" onclick="move(this)" id="3"></div>
+            <div class="tiles" onclick="move(this)" id="4"></div>
+            <div class="tiles" onclick="move(this)" id="5"></div>
+            <div class="tiles" onclick="move(this)" id="6"></div>
+            <div class="tiles" onclick="move(this)" id="7"></div>
+            <div class="tiles" onclick="move(this)" id="8"></div>
+            <div class="tiles" onclick="move(this)" id="9"></div>
+        </div>
     </div>
 </body>
 </html>

@@ -17,15 +17,15 @@
                     <label for="player1" class="playername">Player1</label>
                     <div class="playerScard">
                         <p class="player1Score">
-                            N/A
+                            0
                         </p>
                     </div>
                 </div>
-                <div class="playerarea">
+                <div class="playerarea" id="playerareaid2">
                     <label for="player2" class="playername">player2</label>
                     <div class="playerScard">
                         <p class="player1Score">
-                            N/A
+                           0
                         </p>
                     </div>
                 </div>
@@ -34,16 +34,14 @@
                         Player{?} will make the next move
                     </h3>
                 </div>
-            </div>
+            </div>  
             <div class="controlpanel">
                 <div class="userInput">
                     <input type="Player1" class="PlayersNameEntry" placeholder="Player-1 name here.." >
                     <input type="Player2" class="PlayersNameEntry" placeholder="Player-2 name here..">
                     <button class="submitButton">Submit</button>
                 </div>
-                <button>Against A.I</button>
-                <button>Reset</button>
-                <button>Mute</button>
+                
                 <p class="chatwindow">chat's from ai here</p>
             </div>
         </div>
@@ -57,6 +55,12 @@
             <div class="tiles" onclick="move(this)" id="7"></div>
             <div class="tiles" onclick="move(this)" id="8"></div>
             <div class="tiles" onclick="move(this)" id="9"></div>
+        </div>
+        <div class="maincontrol">
+            <button class="controlers" id="New-Game">New Game</button>
+            <button class="controlers" id="Against-AI">Against A.I</button>
+            <button class="controlers" id="Mute">Mute</button>
+            <button class="controlers" id="hint">Hint</button>
         </div>
     </div>
 </body>

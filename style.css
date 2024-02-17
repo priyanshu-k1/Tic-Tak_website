@@ -1,38 +1,50 @@
+:root {
+    --main-bg-color:#070F2B;
+    --foreground_color:#1B1A55;
+    --other_color1:#535C91;
+    --other_color2:#9290C3;
+  }
 *{
     margin:0px;
     padding:0px;
     box-sizing: border-box;
+}
+body{
+    background-color: #37da37;
 }
 
 .container{
     padding: 10px;
     gap:20px;
     height:100vh;
-    width:100vw;
-    background: rgb(255,154,139);
-    background: linear-gradient(45deg, rgba(255,154,139,1) 0%, rgba(255,106,136,1) 50%, rgba(255,153,172,1) 100%);
+    width:100%;
+    background-color:var(--main-bg-color);
     display: flex;
     align-items: center;
     flex-direction: row;
     overflow: hidden;
+    
 }
 .scoreboard{
-    margin-left:90px;
+    margin-left:30px;
     gap:20px;
     display: flex;
     flex-direction:column;
     padding:10px;
-    height:92vh;
+    height:70vh;
     width:30vw;
-    background-color: blue;
+    background-color:var(--foreground_color);
+    border:solid 1px #3ef7f7;
 
+}
+.scoreboard h1{
+    color: white;
 }
 .card{
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
     width:100%;
-    background-color: blueviolet;
     height:50%;
 }
 .playerarea{
@@ -44,7 +56,7 @@
     width:50%;
     height:80%;
     font-size: 36px;
-    background-color: #dcee79;
+    background-color:var(--other_color1);
 }
 .playerScard{
     margin-top:7px;
@@ -53,7 +65,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border:2px solid black;
     overflow: hidden;
 }
 .indicator{
@@ -63,7 +74,7 @@
     justify-content: center;
     width: 100%;
     height:20%;
-    background-color: aqua;
+    background-color:var(--other_color2);
     
 }
 .controlpanel{
@@ -72,18 +83,18 @@
     gap:10px;
     width:100%;
     height:40%;
-    background-color: brown;
+    background-color:var(--foreground_color);
     padding:10px;
 
 }
 .userInput{
-    background-color: #dcee79;
+    background-color:var(--other_color1);
     padding:5px;
    display: flex;
    flex-wrap: wrap;
    justify-content: center;
    gap:10px;
-   height:35%;
+   height:55%;
 }
 .PlayersNameEntry{
     width: 45%;
@@ -96,24 +107,105 @@
     width:150px;
     height:30px;
     background-color: #37da37;
+    border-radius:25px;
 }
+.maincontrol{
+    padding:10px;
+    display:flex;
+    flex-direction: column;
+    gap:30px;
+    width:8.2%;
+    height:40%;
+    background-color: var(--foreground_color);
+    margin-left:50px;
+    border-radius:30px;
+    border:solid 2px #3ef7f7;
+}
+.controlers{
+    border-radius: 25px;
+    height:40px;
+    width:100px;
+}
+.chatwindow{
+    width: 100%;
+    height:50%;
+    color: #ffffff;
+    background-color:var(--other_color2);;
+    overflow: hidden;
+    border:2px solid black;
+} 
 .board{
     padding: 10px;
     margin-left:40px;
     gap:2px;
     aspect-ratio: 1 / 1;
     width:43vw;
-    background-color: #000000;
+    border:solid 1px #3ef7f7;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    min-height: 90%;
+}
+#Against-AI{
+    background-color: #df351b;
+}
+#New-Game{
+    background-color: #3d67db;
+}
+#Mute{
+    background-color: #ff5e78;
 }
 .tiles{
     display: flex;
     align-items:center;
     justify-content:center;
     font-size:30px;
-    width: 13.8vw;
+    width: 13.7vw;
     height: 33.33%;
     background-color: #ffffff;
+}
+@media only screen and (max-width: 768px){
+    /* .container > div:last-child {
+        order: 0;
+    }  */
+    .container{
+        flex-direction: column-reverse;
+        width:100%;
+        height:110%;
+        padding:10px;
+    }
+    .scoreboard{
+        width:100%;
+        height:30%;
+        margin-left:0px;
+
+    }
+    .scoreboard>h1{
+        display: none;
+    }
+    .scoreboard{
+        height:10%;
+        
+    }
+    
+    .board{
+        padding:0px;
+        width:100%;
+        height:65vh;
+        margin-left:0px;
+    }
+    .tiles{
+        width:32.9%;
+    }
+    .maincontrol{
+        flex-direction: row;
+        width: 100%;
+        margin-left:0;
+        overflow-x:auto; 
+        flex:1;
+    }
+    .controlers{
+        width:130px;
+    }
+    
 }

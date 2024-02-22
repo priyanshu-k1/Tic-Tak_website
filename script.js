@@ -5,6 +5,20 @@ var matrix=[[2,3,4],
             [2,3,4],
             [2,3,4]
           ]
+var Player1="Player 1"
+var Player2="Player 2"
+var playerOneScore=0
+var playerTwoScore=0
+
+
+
+function generateRandom3DigitNumber() {
+  let number = Math.floor(Math.random() * 1000);
+  number = number.toString().padStart(3, '0');
+  return parseInt(number);
+}
+
+
 
 
 function ToCheck(ValToCheck,Array){
@@ -35,6 +49,47 @@ function mapOneOrZero(coordinates,val,matrix1){
   else if(coordinates==8){matrix1[2][1]=val}
   else if(coordinates==9){matrix1[2][2]=val}
 }
+// Function to decide which player will make first move:::::
+// function makeFirstMove(){
+//   const paragraph = document.getElementById("nextturn");
+//   var num=generateRandom3DigitNumber()
+//   if(num%2==0){
+//     paragraph.innerText = "Player 1 will make fisrt move";
+//   }
+//   else{
+//     paragraph.innerText = "Player 2 will make fisrt move";
+//   }
+// }
+
+// makeFirstMove()
+function getPlayerNames(){
+  const inputElement1 = document.getElementById("Player1");
+  const inputElement2 = document.getElementById("Player2");
+  const labelElement1 = document.getElementById("playernameID1");
+  const labelElement2 = document.getElementById("playernameID2");
+  if(inputElement1!=="" && inputElement2!==""){
+      Player1=inputElement1.value
+      Player2=inputElement2.value
+      labelElement1.textContent=Player1
+      labelElement2.textContent=Player2
+    }
+  else if(inputElement1!=="" || inputElement2==""){
+      Player1=inputElement1.value
+      labelElement1.textContent=Player1
+      labelElement2.textContent="Player2"
+  }
+  else if(inputElement1=="" || inputElement2!==""){
+      Player2=inputElement2.value
+      labelElement2.textContent=Player2
+      labelElement1.textContent="Player1"
+  }
+  else{
+    labelElement1.textContent="Player1"
+    labelElement2.textContent="Player2"
+  }
+}
+
+
 
 function checkZero(tiles) {
   // Check vertical
@@ -94,28 +149,32 @@ function checkOne(tiles) {
 }
 
 
-// function isWinnig(){
-//   if(checkZero(matrix)){
-
-
-//   }
-//   else if(checkOne(matrix)){
-
-//   }
-// }
-// setInterval(isWinnig, 1000);
+function isWinnig(){
+  const announce=document.getElementById("nextturn");
+  if(checkZero(matrix)){
+    announce.textContent=Player2+" won"
+    playerTwoScore++
+    tokens=[];
+  }
+  else if(checkOne(matrix)){
+    announce.textContent=Player1+" won"
+    playerOneScore++
+    tokens=[];
+  }
+}
+setInterval(isWinnig, 100);
 
 function move(cell){
     if(ToCheck(getElementId(cell),tokens)){
         if(counter==0){
             cell.textContent = "O";
             cell.style.background="red";
-            counter=0;
+            counter=1;
         }
         else{
             cell.textContent = "X";
             cell.style.background="green";
-            counter=1;
+            counter=0;
         }
         tokens=removeElement(getElementId(cell),tokens)
         if(counter==1){
@@ -124,12 +183,38 @@ function move(cell){
         else{
           mapOneOrZero(getElementId(cell),counter,matrix)
         }
-        console.log(matrix)
-
     }
     else{
         console.log("Invalid")
     }
-    
+}
+function restgame(){
+  const announce=document.getElementById("nextturn");
+  const tiles = document.querySelectorAll(".tiles");
+  const player1scoretag= document.getElementById("player1ScoreID");
+  const player2scoretag= document.getElementById("player2ScoreID");
+  for (let i = 0; i < tiles.length; i++) {
+    tiles[i].style.backgroundColor = "white";
+    tiles[i].textContent = "";
+  }
+  player1scoretag.textContent = 0;
+  player2scoretag.textContent = 0;
+  matrix=[[2,3,4],
+            [2,3,4],
+            [2,3,4]
+          ]
+  tokens=["1","2","3","4","5","6","7","8","9"];
+  announce.textContent=Player1+" will start"
+  playerOneScore=0
+  playerTwoScore=0
 
 }
+function updateScore(){
+  var player1=document.getElementById("player1ScoreID")
+  var player2=document.getElementById("player2ScoreID")
+  player1.innerText=playerOneScore
+  player2.innerText=playerTwoScore
+}
+setInterval(updateScore, 100);
+
+// Function calls

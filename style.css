@@ -9,10 +9,6 @@
     padding:0px;
     box-sizing: border-box;
 }
-body{
-    background-color: #37da37;
-}
-
 .container{
     padding: 10px;
     gap:20px;
@@ -34,6 +30,7 @@ body{
     height:70vh;
     width:30vw;
     background-color:var(--foreground_color);
+    border-radius:10px;
     border:solid 1px #3ef7f7;
 
 }

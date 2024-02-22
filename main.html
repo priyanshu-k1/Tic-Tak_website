@@ -14,32 +14,32 @@
             <h1 align="center">Player's scoreboard</h1>
             <div class="card">
                 <div class="playerarea">
-                    <label for="player1" class="playername">Player1</label>
+                    <label for="player1" class="playername" id="playernameID1">Player 1</label>
                     <div class="playerScard">
-                        <p class="player1Score">
+                        <p class="player1Score" id="player1ScoreID">
                             0
                         </p>
                     </div>
                 </div>
                 <div class="playerarea" id="playerareaid2">
-                    <label for="player2" class="playername">player2</label>
+                    <label for="player2" class="playername" id="playernameID2">player 2</label>
                     <div class="playerScard">
-                        <p class="player1Score">
+                        <p class="player1Score" id="player2ScoreID">
                            0
                         </p>
                     </div>
                 </div>
                 <div class="indicator">
-                    <h3 class="nextturn">
-                        Player{?} will make the next move
+                    <h3 class="nextturn" id="nextturn">
+                       First to start
                     </h3>
                 </div>
             </div>  
             <div class="controlpanel">
                 <div class="userInput">
-                    <input type="Player1" class="PlayersNameEntry" placeholder="Player-1 name here.." >
-                    <input type="Player2" class="PlayersNameEntry" placeholder="Player-2 name here..">
-                    <button class="submitButton">Submit</button>
+                    <input type="Player1" class="PlayersNameEntry" placeholder="Player-1 name here.." id="Player1" >
+                    <input type="Player2" class="PlayersNameEntry" placeholder="Player-2 name here.." id="Player2">
+                    <button class="submitButton" onclick="getPlayerNames()">Submit</button>
                 </div>
                 
                 <p class="chatwindow">chat's from ai here</p>
@@ -57,10 +57,10 @@
             <div class="tiles" onclick="move(this)" id="9"></div>
         </div>
         <div class="maincontrol">
-            <button class="controlers" id="New-Game">New Game</button>
+            <button class="controlers" id="New-Game" onclick="restgame()">New Game</button>
+            <button class="controlers" id="hint">Restart</button>
             <button class="controlers" id="Against-AI">Against A.I</button>
             <button class="controlers" id="Mute">Mute</button>
-            <button class="controlers" id="hint">Hint</button>
         </div>
     </div>
 </body>

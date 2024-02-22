@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/assets/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
     <title>Tic Tac</title>
 </head>
 <body>
     <div class="container">
+        <!-- <audio controls  id="audio">
+            <source src="assets/bgm.mp3" type="audio/mpeg">
+          </audio> -->
+          
         <div class="scoreboard">
             <h1 align="center">Player's scoreboard</h1>
             <div class="card">
@@ -63,5 +67,11 @@
             <button class="controlers" id="Mute">Mute</button>
         </div>
     </div>
+    <script>
+        window.onload=function(){
+        const var_music_player=document.getElementById("audio")
+        var_music_player.play();
+        }
+    </script>
 </body>
 </html>

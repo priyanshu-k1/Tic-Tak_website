@@ -121,7 +121,8 @@
 .controlers{
     border-radius: 25px;
     height:40px;
-    width:100px;
+    width:90px;
+    border: solid 2px black;
 }
 .chatwindow{
     width: 100%;
@@ -157,7 +158,7 @@
     align-items:center;
     justify-content:center;
     font-size:30px;
-    width: 13.7vw;
+    width: 13.69vw;
     height: 33.33%;
     background-color: #ffffff;
 }
